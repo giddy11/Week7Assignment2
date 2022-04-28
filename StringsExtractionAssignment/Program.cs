@@ -8,13 +8,13 @@ var fileDatas = "Starlight is the light emitted by stars.[1] It typically refers
 
 var fileData = fileDatas.ToLower();
 
-var extractObservable = fileData.Substring(fileData.IndexOf("observable"), 25);
-var extractBefore = fileData.Substring(fileData.IndexOf("reflection"), 10);
+var extractObservable = fileDatas.Substring(fileData.IndexOf("observable"), 25);
+var extractBefore = fileDatas.Substring(fileData.IndexOf("reflection"), 10);
 var merged = String.Concat(extractObservable, extractBefore);
 var replaceSun = fileData.Replace("Sun", "Solar Emission");
 //Console.WriteLine(replaceSun);
 
-var sentences = fileData.Split('.');
+var sentences = fileDatas.Split('.');
 var mergeFirstLast = String.Join(". ", sentences[0], sentences[sentences.Length-1]);
 
 string refNumber1 = sentences[1].Substring(0, 3);
