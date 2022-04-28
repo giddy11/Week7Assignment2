@@ -1,15 +1,17 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-var fileData = "Starlight is the light emitted by stars.[1] It typically refers to visible electromagnetic radiation from stars other than the\n\n" +
+var fileDatas = "Starlight is the light emitted by stars.[1] It typically refers to visible electromagnetic radiation from stars other than the\n\n" +
                "Sun,observable from earth at night,although a component of starlight is observable from earth during daytime.\n\n\n" +
                "Sunlight is the term used for the sun's starlight observed during daytime.[2] During nighttime,albedo describe solar\n\n" +
                "reflections from other Solar System objects,including moonlight,planet shine,and zodiacal light.[3]\n\n\n\n\n";
 
 
+var fileData = fileDatas.ToLower();
+
 var extractObservable = fileData.Substring(fileData.IndexOf("observable"), 25);
 var extractBefore = fileData.Substring(fileData.IndexOf("reflection"), 10);
 var merged = String.Concat(extractObservable, extractBefore);
-var replaceSun = fileData.Replace("Sun", "\"Solar Emission\"");
+var replaceSun = fileData.Replace("Sun", "Solar Emission");
 //Console.WriteLine(replaceSun);
 
 var sentences = fileData.Split('.');
